@@ -1,0 +1,63 @@
+.game_container{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 5px;
+    margin: 0 auto;
+    width: fit-content;
+    
+    
+}
+
+#timer-container{
+    text-align: center;
+  
+}
+
+
+
+
+.gameCell{
+    width: 100px;
+    height: 100px;
+    border: 2px solid #464612;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 2px 1px rgb(194, 189, 189);
+    
+}
+
+
+h1{
+    text-align: center;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+#buttonStyle{
+    background-color: #999A0B;
+    border: none;
+    color:whitesmoke;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+form{
+    text-align: center;
+}
+
+#playAgain{
+    color:red;
+    display: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+

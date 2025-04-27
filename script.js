@@ -1,3 +1,4 @@
+let gameOver = false;
 let currentPlayer = Math.random() < 0.5;
 const NUM_ROWS = 3;
 const NUM_COLS = 3;
@@ -83,7 +84,7 @@ const cells = document.querySelectorAll(".gameCell");
 
 
   if (winner === 'X' || winner === 'O' || winner === 'T') {
-    
+    gameOver = true;
     endTime = new Date(); 
    
     let durationMilliseconds = endTime - startTime;
@@ -159,6 +160,7 @@ playerVsComputerRadio.addEventListener('change', function() {
 
 
 function resetGame() {
+    gameOver = false;
     startTime = new Date();
     timerDisplay.innerHTML ="0";
   gameBoard = [
@@ -198,17 +200,17 @@ cells.forEach(cell => {
 
 
 function cellClicked(event){
-  
+    if (gameOver) return; 
+
+
  let cell = event.target;
  let cellId = cell.id;
  let cellNumber = parseInt(cellId.split('_')[1]); 
-
-
- let row = Math.floor(cellNumber / 3);
+let row = Math.floor(cellNumber / 3);
  let col = cellNumber % 3; 
 
 
-
+// Handle player X or O's move
     if(currentPlayer) {
 
     if(gameBoard[row][col] == '') {
@@ -238,7 +240,7 @@ gameBoard[row][col] = 'O';
  
   currentPlayer = !currentPlayer;  //flip turn
 
-  testForWinner();
+  testForWinner(); // Check for winner after every move
 
 
 }//end handleCellClick

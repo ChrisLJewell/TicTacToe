@@ -246,7 +246,7 @@ gameBoard[row][col] = 'O';
 }//end handleCellClick
 
 function playerVsAI(event) {
-    
+    if (gameOver) return;
     if (event) {
         let cell = event.target;
         let cellId = cell.id;

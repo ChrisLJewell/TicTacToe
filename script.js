@@ -209,41 +209,27 @@ function cellClicked(event){
 let row = Math.floor(cellNumber / 3);
  let col = cellNumber % 3; 
 
-
+if(gameBoard[row][col] !== '') return;
 // Handle player X or O's move
     if(currentPlayer) {
 
-    if(gameBoard[row][col] == '') {
+     
          gameBoard[row][col] = 'X'; 
          cell.textContent = "X";  
-         cell.style.backgroundColor = "#E1341E";
+         cell.style.backgroundColor = "#b6cca1";
          changeH1.innerHTML= "O's turn";
+         }else
+         {
+            gameBoard[row][col] = 'O'; 
+            cell.textContent = "O";
+             cell.style.backgroundColor = "#b68f40";
+            changeH1.innerHTML= "X's turn";
          }
 
-    
+    currentPlayer = !currentPlayer;
+    testForWinner(); 
 
-  }
-
-    else {
-        if(gameBoard[row][col] == '') {
-gameBoard[row][col] = 'O'; 
-            cell.textContent = "O";
-            cell.style.backgroundColor = "#1ECBE1";
-            changeH1.innerHTML= "X's turn";
-        }
-    
-  
- 
-  }
-
-
- 
-  currentPlayer = !currentPlayer;  //flip turn
-
-  testForWinner(); // Check for winner after every move
-
-
-}//end handleCellClick
+  }//end handleCellClick
 
 function playerVsAI(event) {
     if (gameOver) return;
@@ -258,7 +244,7 @@ function playerVsAI(event) {
         if (gameBoard[row][col] == '') {
             gameBoard[row][col] = 'X';
             cell.textContent = "X";
-            cell.style.backgroundColor = "#E1341E";
+            cell.style.backgroundColor = "#466060";
             changeH1.innerHTML = "O's turn";
             testForWinner(); 
             makeAIMove(); 
@@ -295,7 +281,7 @@ function makeAIMove() {
     let cellIdAi = 'cell_' + (randomCell.row * NUM_COLS + randomCell.col);
     let cellAi = document.getElementById(cellIdAi);
     cellAi.textContent = "O";
-    cellAi.style.backgroundColor = "#1ECBE1";
+    cellAi.style.backgroundColor = "#57886c";
     changeH1.innerHTML = "X's turn"; 
     testForWinner();
     

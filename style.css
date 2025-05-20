@@ -19,35 +19,50 @@
 .gameCell{
     width: 100px;
     height: 100px;
-    border: 2px solid #464612;
+    border: 2px solid #999A0B;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
     cursor: pointer;
     background-color: white;
-    box-shadow: 2px 1px rgb(194, 189, 189);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+    
+}
+.gameCell:hover {
+    background-color: #f5f5f5;
+}
+
+h1 , h2 {
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
     
 }
 
 
-h1{
-    text-align: center;
-    
-}
 
-h2{
-    text-align: center;
-}
 
-#buttonStyle{
+
+#buttonStyle {
     background-color: #999A0B;
     border: none;
-    color:whitesmoke;
-    padding: 5px 10px;
-    margin: 10px;
-    cursor: pointer;
+    color: whitesmoke;
+    padding: 5px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
+
+#buttonStyle:hover {
+    background-color: #B7B808;
+}
+
+
+
+
+
 
 form{
     text-align: center;
@@ -58,6 +73,12 @@ form{
     display: none;
     cursor: pointer;
     margin: auto;
+}
+
+body {
+    background-color: #F0F0F0; /* soft light gray */
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px;
 }
 
 
